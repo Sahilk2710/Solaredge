@@ -1,0 +1,15 @@
+public_info.content:
+  path: '/public-info'
+  defaults:
+    _controller: '\Drupal\public_info\Controller\PublicInfoController::__invoke'
+    _title: 'Public Info Data'
+  requirements:
+    _permission: 'access public info page'
+
+public_info.settings_form:
+  path: '/admin/config/services/public-info'
+  defaults:
+    _form: '\Drupal\public_info\Form\PublicInfoSettingsForm'
+    _title: 'Public Info Settings'
+  requirements:
+    _permission: 'administer site configuration'

@@ -1,0 +1,11 @@
+services:
+  public_info.api_client:
+    class: Drupal\public_info\Service\PublicInfoApiClient
+    arguments:
+      - '@http_client'
+      - '@logger.channel.public_info'
+      - '@cache.default'
+
+  logger.channel.public_info:
+    parent: logger.channel_base
+    arguments: ['public_info']

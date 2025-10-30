@@ -1,0 +1,3 @@
+access public info page:
+  title: 'Access Public Info Page'
+  description: 'Allow users to view SpaceX launch information from the Public Info module.'

@@ -1,0 +1,7 @@
+block.settings.public_info_block:
+  type: block_settings
+  label: 'Public Info Block block'
+  mapping:
+    example:
+      type: string
+      label: Example

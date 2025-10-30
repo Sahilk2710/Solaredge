@@ -1,0 +1,19 @@
+<?php
+
+use Drupal\Core\Render\Markup;
+
+/**
+ * Implements hook_theme().
+ */
+function public_info_theme($existing, $type, $theme, $path) {
+  return [
+    'public_info_launches' => [
+      'variables' => [
+        'launches' => [],
+        'last_fetched' => '',
+        'pager' => NULL,
+      ],
+      'template' => 'public-info-launches',
+    ],
+  ];
+}

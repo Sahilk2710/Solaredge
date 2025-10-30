@@ -1,0 +1,32 @@
+.public-info-launches { font-family: sans-serif; padding: 10px; }
+.launch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+.launch-item {
+  background: #f8f8f8;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.launch-item img {
+  max-width: 100px;
+  margin-bottom: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+.launch-item h3 { margin: 5px 0; font-size: 1.1rem; }
+.launch-item a {
+  color: #0074d9;
+  text-decoration: none;
+  font-weight: bold;
+}
+.launch-item a:hover { text-decoration: underline; }
+.public-info-pager {
+  margin-top: 20px;
+  text-align: center;
+}
+
