@@ -87,3 +87,7 @@ Admin configuration page for module settings:
 
 ## 📄 License
 This project is licensed under the MIT License.
+<img width="1860" height="816" alt="image" src="https://github.com/user-attachments/assets/c4928765-ddd8-4dca-9c85-fbdbcba96e3f" />
+<img width="1911" height="617" alt="image" src="https://github.com/user-attachments/assets/32f6b2ce-40fd-4576-9588-39538260c818" />
+<img width="1828" height="985" alt="image" src="https://github.com/user-attachments/assets/9ffedd54-7342-4ea5-8546-c2b411adfc16" />
+
