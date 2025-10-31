@@ -40,7 +40,8 @@ To manage permissions, visit:
 Visit the following route to view API data:
 ```
 /public-info
-<img width="1850" height="976" alt="image" src="https://github.com/user-attachments/assets/7eac383e-c1b4-461a-a3c0-2fcbb5021bbb" />
+<img width="1713" height="987" alt="image" src="https://github.com/user-attachments/assets/6bd17b24-3537-408a-a251-19b076e0a0ce" />
+
 
 ### 6️⃣ Access the Configuration Form
 Admin configuration page for module settings:
