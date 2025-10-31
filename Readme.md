@@ -8,57 +8,46 @@ This project provides a custom Drupal module (`public_info`) that fetches and di
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone <repository-url>
+git clone https://github.com/Sahilk2710/Solaredge.git
+<img width="1448" height="566" alt="image" src="https://github.com/user-attachments/assets/338de4a3-12eb-4d38-a7d6-01a990dc24ff" />
+
 cd <project-folder>
-```
-
----
-
-### 2️⃣ Start the DDEV Environment
-```bash
+dde config (drupal11)
 ddev start
-```
-
----
-
-### 3️⃣ Import the Database
-Make sure you have the `solaredge.sql.gz` database dump file, then run:
-```bash
-ddev import-db --file=solaredge.sql.gz
-```
-
----
+ddev import-db --src=solaredge.sql.gz
+ddev drush cr
+ddev ddrush uli
+php version ->php 8.3
+Drupal Version ->drupal 11.2
+mysql 
 
 ### 4️⃣ Login Credentials
 
-#### 🔑 Admin User
+####  Admin User
 - **Username:** `sahil@bigsteptech.com`
 - **Password:** `L3@rnNow0507!`
 
-#### 🧑‍💻 Authenticated User (Content Editor)
+#### Authenticated User (Content Editor)
 - **Username:** `sahil1`
 - **Password:** `test`
 
 To manage permissions, visit:
 ```
 /admin/people/permissions
-```
-
----
 
 ### 5️⃣ Test the Public Info API Page
 Visit the following route to view API data:
 ```
 /public-info
-```
-
----
+<img width="1850" height="976" alt="image" src="https://github.com/user-attachments/assets/7eac383e-c1b4-461a-a3c0-2fcbb5021bbb" />
 
 ### 6️⃣ Access the Configuration Form
 Admin configuration page for module settings:
 ```
 /admin/config/services/public-info
 ```
+<img width="1623" height="856" alt="image" src="https://github.com/user-attachments/assets/d3299271-8073-4f1b-8b50-3ee7587677ad" />
+
 
 ---
 
@@ -69,16 +58,8 @@ Admin configuration page for module settings:
 | **Settings Form** | Admin configurable options under `/admin/config/services/public-info` |
 | **Permissions** | Granular control via Drupal’s permissions UI |
 
----
 
-## 🧰 Requirements
-- Drupal 10.x or 11.x
-- PHP 8.1+
-- DDEV environment
-
----
-
-## 💡 Tips
+##  Tips
 - Run `drush cr` after any code changes to clear cache.
 - If routes or controllers are updated, ensure file paths and namespaces match PSR-4 standards.
 - Use `ddev ssh` to access the container if needed for Drush commands.
