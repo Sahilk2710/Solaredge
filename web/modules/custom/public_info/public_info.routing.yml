@@ -13,3 +13,12 @@ public_info.settings_form:
     _title: 'Public Info Settings'
   requirements:
     _permission: 'administer site configuration'
+
+public_info.refresh:
+  path: '/public-info/refresh'
+  defaults:
+    _controller: '\Drupal\public_info\Controller\PublicInfoController::refresh'
+    _title: 'Refresh SpaceX Launch Data'
+  requirements:
+    _permission: 'access public info page'
+

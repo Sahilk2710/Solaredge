@@ -30,3 +30,23 @@
   text-align: center;
 }
 
+.public-info-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.refresh-button {
+  background: #007bff;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.refresh-button:hover {
+  background: #0056b3;
+}

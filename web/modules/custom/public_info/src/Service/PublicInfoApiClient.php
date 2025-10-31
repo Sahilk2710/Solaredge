@@ -56,14 +56,12 @@ class PublicInfoApiClient {
   /**
    * Fetch SpaceX launch data from API or cache.
    */
-  public function getLaunchData(): ?array {
-    // Step 1: Return cached data if available.
-    if ($cache = $this->cache->get(self::CACHE_ID)) {
+  public function getLaunchData(bool $force_refresh = FALSE): ?array {
+    // Step 1: Return cached data if available and not forced to refresh.
+    if (!$force_refresh && ($cache = $this->cache->get(self::CACHE_ID))) {
       return $cache->data;
     }
-
     $url = 'https://api.spacexdata.com/v4/launches';
-
     try {
       $response = $this->httpClient->request('GET', $url, ['timeout' => 5]);
 
@@ -77,6 +75,10 @@ class PublicInfoApiClient {
           time() + self::TTL,
           ['public_info:spacex']
         );
+
+        $this->logger->info('SpaceX API data fetched successfully (force refresh: @force)', [
+          '@force' => $force_refresh ? 'Yes' : 'No',
+        ]);
 
         return $data;
       }
@@ -98,5 +100,6 @@ class PublicInfoApiClient {
 
     return NULL;
   }
+
 
 }

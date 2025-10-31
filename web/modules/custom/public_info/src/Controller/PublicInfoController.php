@@ -123,4 +123,28 @@ final class PublicInfoController extends ControllerBase {
       ],
     ];
   }
+  /**
+   * Forces a manual refresh of SpaceX data.
+   */
+  public function refresh() {
+    // Ensure permission.
+    if (!$this->currentUser()->hasPermission('access public info page')) {
+      throw new AccessDeniedHttpException();
+    }
+
+    // Call your API client directly to bypass cache and refetch latest.
+    $fresh_data = $this->apiClient->getLaunchData(TRUE); // TRUE means "force refresh"
+
+    if (!empty($fresh_data)) {
+      $this->messenger()->addStatus($this->t('SpaceX launch data refreshed successfully.'));
+    }
+    else {
+      $this->messenger()->addError($this->t('Failed to refresh SpaceX data. Please try again.'));
+    }
+
+    // Redirect back to the main listing page.
+    return $this->redirect('public_info.content');
+  }
+
 }
+

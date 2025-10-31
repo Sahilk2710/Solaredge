@@ -1,26 +1,43 @@
 <div class="public-info-launches">
   <h2>Latest SpaceX Launches</h2>
-  <p><em>Last Fetched: {{ last_fetched }}</em></p>
+
+  <div class="public-info-meta">
+    <p><em>Last Fetched: {{ last_fetched }}</em></p>
+
+    {# Use your actual route name from routing.yml (public_info.refresh) #}
+    <a
+      href="{{ path('public_info.refresh') }}"
+      class="refresh-button use-ajax"
+      data-dialog-type="ajax"
+      title="Click to refresh data from SpaceX API"
+    >
+      🔄 Refresh Now
+    </a>
+  </div>
+
   <div class="launch-grid">
     {% for launch in launches %}
       <div class="launch-item">
         {% if launch.image %}
           <img src="{{ launch.image }}" alt="{{ launch.name }}" />
         {% endif %}
+
         <h3>{{ launch.name }}</h3>
         <p>Flight #: {{ launch.flight_number }}</p>
         <p>Date: {{ launch.date }}</p>
+
         {% if launch.youtube %}
-          <a href="{{ launch.youtube }}" target="_blank">Watch on YouTube</a>
+          <a href="{{ launch.youtube }}" target="_blank" rel="noopener noreferrer">
+            Watch on YouTube
+          </a>
         {% endif %}
       </div>
     {% else %}
       <p>No launches found.</p>
     {% endfor %}
   </div>
+
   <div class="public-info-pager">
     {{ pager }}
   </div>
 </div>
-
-
