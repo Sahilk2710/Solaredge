@@ -7,15 +7,15 @@ It demonstrates modern **Drupal 11** best practices — including **custom contr
 ---
 
 ## ✨ KEY FEATURES
-✅ Fetches real-time launch data using **GuzzleHttp** service.
-✅ Implements **custom service** (`public_info.api_client`) for API communication.
-✅ Displays launches via **controller route** with built-in **pagination**.
-✅ Provides a configurable **block plugin** to display latest launches anywhere on the site.
-✅ Includes an **admin configuration form** to set cache TTL and result limit.
-✅ Uses **Twig template** for responsive layout (images, dates, YouTube links).
-✅ Loads **CSS** via **library system** (`public_info.libraries.yml`).
-✅ Defines a **custom permission** to restrict access (`access public info page`).
-✅ Demonstrates **dependency injection**, **caching**, and **Drupal coding standards**.
+Fetches real-time launch data using **GuzzleHttp** service.
+Implements **custom service** (`public_info.api_client`) for API communication.
+Displays launches via **controller route** with built-in **pagination**.
+Provides a configurable **block plugin** to display latest launches anywhere on the site.
+Includes an **admin configuration form** to set cache TTL and result limit.
+Uses **Twig template** for responsive layout (images, dates, YouTube links).
+Loads **CSS** via **library system** (`public_info.libraries.yml`).
+Defines a **custom permission** to restrict access (`access public info page`).
+Demonstrates **dependency injection**, **caching**, and **Drupal coding standards**.
 
 ---
 
@@ -47,7 +47,7 @@ It demonstrates modern **Drupal 11** best practices — including **custom contr
 View the latest SpaceX launch data at:
 👉 `/public-info`
 Example (on DDEV):
-`https://solaredge.ddev.site/public-info`
+`site_url/public-info`
 
 **Controller:**
 `src/Controller/PublicInfoController.php`
@@ -59,7 +59,7 @@ Example (on DDEV):
 
 ### 🔹 Admin Configuration Form
 Configure cache TTL and number of results at:
-👉 `/admin/config/public-info/settings`
+👉 `/admin/config/services/public-info`
 
 **Form Class:**
 `src/Form/PublicInfoSettingsForm.php`
@@ -71,12 +71,10 @@ Configure cache TTL and number of results at:
 
 ### 🔹 Block Plugin
 You can place the **Public Info Block** anywhere from the Drupal admin UI:
-👉 `/admin/structure/block`
+`/admin/structure/block`
 
 **Block Class:**
 `src/Plugin/Block/PublicInfoBlock.php`
-
-
 Add the Public Info Block
 To display launch data in a specific region:
 
